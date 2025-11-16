@@ -5,94 +5,131 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nhóm 5 – 12Anh</title>
 
-  <!-- CSS GỘP CHUNG TRONG 1 FILE -->
   <style>
     :root{
-      --accent: #2a72ff;
-      --accent-dark: #1e55cc;
-      --background: #f0f5ff;
-      --text: #0d1b2a;
-      --muted: #556;
+      --accent: #3a6cf4;
+      --accent-dark: #2a52c6;
+      --background: #eef3ff;
+      --text: #0b1220;
+      --muted: #667;
       --card: #ffffff;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
     *{ box-sizing:border-box; }
 
     body{
-      font-family: "Segoe UI", Arial;
+      font-family: "Inter", "Segoe UI", Arial;
       margin:0;
       background: var(--background);
       color: var(--text);
+      line-height:1.6;
     }
 
     .container{
       max-width:900px;
-      margin:40px auto;
+      margin:50px auto;
       background: var(--card);
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      padding:40px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn{
+      from{ opacity:0; transform: translateY(10px); }
+      to{ opacity:1; transform: translateY(0); }
     }
 
     h1{
       margin:0 0 10px 0;
-      font-size:32px;
+      font-size:36px;
+      font-weight:700;
       color: var(--accent-dark);
     }
 
-    .lead{
-      margin:0 0 18px 0;
-      color: var(--muted);
+    h2{
+      margin-top:35px;
+      font-size:26px;
+      color: var(--accent-dark);
+      border-left:6px solid var(--accent);
+      padding-left:12px;
     }
 
-    section{ margin-top:28px; }
+    h3{
+      margin-top:0;
+      font-size:20px;
+      color:#1c2a48;
+    }
+
+    .lead{
+      margin:0 0 20px 0;
+      color: var(--muted);
+      font-size:17px;
+    }
 
     .members ul{
       list-style:none;
       padding:0;
-      margin:12px 0 0 0;
+      margin:15px 0 0 0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
     .members li{
-      background:#e8efff;
+      background:#e3eaff;
       color:#123;
-      padding:10px 14px;
-      border-radius:8px;
-      border:1px solid #d3dfff;
-      margin-bottom:8px;
-      display:inline-block;
-      min-width:150px;
-      font-weight:500;
+      padding:10px 16px;
+      border-radius:var(--radius);
+      border:1px solid #d0dbff;
+      font-weight:600;
+      box-shadow:0 3px 8px rgba(0,0,0,0.04);
+      transition: transform .15s;
+    }
+
+    .members li:hover{
+      transform:translateY(-3px);
     }
 
     .task{
-      background:#f7f9ff;
+      background:#f3f6ff;
       border:1px solid #dbe3ff;
-      border-radius:8px;
-      padding:14px;
-      margin-bottom:14px;
+      border-radius:var(--radius);
+      padding:18px;
+      margin-bottom:18px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      transition:0.2s;
+    }
+
+    .task:hover{
+      transform: translateY(-3px);
     }
 
     .btn{
       display:inline-block;
-      padding:8px 14px;
+      padding:10px 18px;
       text-decoration:none;
       background: var(--accent);
       color:white;
-      border-radius:6px;
+      border-radius:8px;
       font-weight:600;
+      transition: background .2s, transform .15s;
     }
 
     .btn:hover{
       background: var(--accent-dark);
+      transform:translateY(-2px);
     }
 
     .site-footer{
-      margin-top:26px;
-      padding-top:14px;
-      border-top:1px solid #eee;
+      margin-top:40px;
+      padding-top:20px;
+      border-top:1px solid #ddd;
       text-align:center;
       color: var(--muted);
+      font-size:14px;
     }
   </style>
 </head>
@@ -125,22 +162,22 @@
       <article class="task">
         <h3>Bài tập 1</h3>
         <p>Mô tả bài làm...</p>
-        <p><a href="#" class="btn">Xem bài làm</a></p>
+        <p><a href="https://www.canva.com/design/DAGz5gobQAw/J1jTQ2KBuOmHuo1VUhdcfA/edit?utm_content=DAGz5gobQAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn" target="_blank">Xem bài làm</a></p>
       </article>
 
       <article class="task">
         <h3>Bài tập 2</h3>
         <p>Mô tả bài làm...</p>
-        <p><a href="#" class="btn">Xem bài làm</a></p>
+        <p><a href="https://www.canva.com/design/DAGz5gobQAw/J1jTQ2KBuOmHuo1VUhdcfA/edit?utm_content=DAGz5gobQAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn" target="_blank">Xem bài làm</a></p>
       </article>
     </section>
 
     <section class="presentation">
       <h2>Bài thuyết trình</h2>
-      <article>
+      <article class="task">
         <h3>Chủ đề thuyết trình</h3>
         <p>Mô tả nội dung thuyết trình...</p>
-        <p><a href="#" class="btn">Xem bài thuyết trình</a></p>
+        <p><a href="https://www.canva.com/design/DAGz5gobQAw/J1jTQ2KBuOmHuo1VUhdcfA/edit?utm_content=DAGz5gobQAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn" target="_blank">Xem bài thuyết trình</a></p>
       </article>
     </section>
 
