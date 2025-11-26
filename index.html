@@ -2,198 +2,178 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nhóm 5 – 12Anh</title>
 
+  <!-- FONT giống Canva -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --accent: #3a6cf4;
-      --accent-dark: #2a52c6;
-      --background: #eef3ff;
-      --text: #0b1220;
-      --muted: #667;
-      --card: #ffffff;
-      --radius: 14px;
-      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+    :root {
+      --primary: #4f46e5;      /* Indigo Canva */
+      --secondary: #6366f1;
+      --bg-light: #eef2ff;
+      --card-bg: #ffffff;
+      --soft: #c7d2fe;
     }
 
-    *{ box-sizing:border-box; }
-
-    body{
-      font-family: "Inter", "Segoe UI", Arial;
-      margin:0;
-      background: var(--background);
-      color: var(--text);
-      line-height:1.6;
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9ff;
+      color: #222;
     }
 
-    .container{
-      max-width:900px;
-      margin:50px auto;
-      background: var(--card);
-      padding:40px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      animation: fadeIn 0.5s ease;
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px;
     }
 
-    @keyframes fadeIn{
-      from{ opacity:0; transform: translateY(10px); }
-      to{ opacity:1; transform: translateY(0); }
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary);
     }
 
-    h1{
-      margin:0 0 10px 0;
-      font-size:36px;
-      font-weight:700;
-      color: var(--accent-dark);
+    h2 {
+      font-size: 28px;
+      margin-top: 40px;
+      color: var(--primary);
     }
 
-    h2{
-      margin-top:35px;
-      font-size:26px;
-      color: var(--accent-dark);
-      border-left:6px solid var(--accent);
-      padding-left:12px;
+    p {
+      font-size: 17px;
+      color: #444;
+      line-height: 1.6;
     }
 
-    h3{
-      margin-top:0;
-      font-size:20px;
-      color:#1c2a48;
+    /* MEMBER LIST */
+    .members-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
     }
 
-    .lead{
-      margin:0 0 20px 0;
-      color: var(--muted);
-      font-size:17px;
+    .member {
+      padding: 14px 26px;
+      background: var(--bg-light);
+      border-radius: 30px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .members ul{
-      list-style:none;
-      padding:0;
-      margin:15px 0 0 0;
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
+    .member:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     }
 
-    .members li{
-      background:#e3eaff;
-      color:#123;
-      padding:10px 16px;
-      border-radius:var(--radius);
-      border:1px solid #d0dbff;
-      font-weight:600;
-      box-shadow:0 3px 8px rgba(0,0,0,0.04);
-      transition: transform .15s;
+    /* CARD STYLE */
+    .task {
+      background: var(--card-bg);
+      padding: 25px 28px;
+      border-radius: 22px;
+      margin-top: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: 0.25s ease;
     }
 
-    .members li:hover{
-      transform:translateY(-3px);
+    .task:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.10);
     }
 
-    .task{
-      background:#f3f6ff;
-      border:1px solid #dbe3ff;
-      border-radius:var(--radius);
-      padding:18px;
-      margin-bottom:18px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.05);
-      transition:0.2s;
+    .task h3 {
+      margin-top: 0;
+      color: var(--secondary);
+      font-size: 22px;
     }
 
-    .task:hover{
+    .btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    }
+
+    .btn:hover {
+      background: var(--secondary);
       transform: translateY(-3px);
     }
 
-    .btn{
-      display:inline-block;
-      padding:10px 18px;
-      text-decoration:none;
-      background: var(--accent);
-      color:white;
-      border-radius:8px;
-      font-weight:600;
-      transition: background .2s, transform .15s;
-    }
-
-    .btn:hover{
-      background: var(--accent-dark);
-      transform:translateY(-2px);
-    }
-
-    .site-footer{
-      margin-top:40px;
-      padding-top:20px;
-      border-top:1px solid #ddd;
-      text-align:center;
-      color: var(--muted);
-      font-size:14px;
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 25px 0;
+      color: #666;
+      font-size: 15px;
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
+  <!-- Banner Canva -->
+<section class="hero-banner">
+  <div class="hero-content">
     <h1>Nhóm 5 – 12Anh</h1>
-
-    <p class="lead">Trang web tổng hợp bài tập – thuyết trình – sản phẩm học tập</p>
-
-    <section class="welcome">
-      <h2>Xin chào!</h2>
-      <p>Chào mừng bạn đến với trang web của Nhóm 5 – 12Anh. Đây là nơi lưu trữ toàn bộ bài tập và sản phẩm học tập của nhóm.</p>
-    </section>
-
-    <section class="members">
-      <h2>Thành viên nhóm</h2>
-      <ul>
-        <li>Hải Đăng</li>
-        <li>Quang Thảo</li>
-        <li>Kim Thanh</li>
-        <li>Ngọc Diệp</li>
-        <li>Huy Thuận</li>
-      </ul>
-    </section>
-
-    <section class="assignments">
-      <h2>Bài tập</h2>
-<section class="members">
-  <h2>Thành viên nhóm</h2>
-  <ul>
-    <li><a href="dang.html">Hải Đăng</a></li>
-    <li><a href="thao.html">Quang Thảo</a></li>
-    <li><a href="thanh.html">Kim Thanh</a></li>
-    <li><a href="diep.html">Ngọc Diệp</a></li>
-    <li><a href="thuan.html">Huy Thuận</a></li>
-  </ul>
+  </div>
 </section>
 
-      <article class="task">
-        <h3>Bài tập 1</h3>
-        <p>Mô tả bài làm...</p>
-        <p><a href="https://www.canva.com/design/DAGz5gobQAw/J1jTQ2KBuOmHuo1VUhdcfA/edit?utm_content=DAGz5gobQAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn" target="_blank">Xem bài làm</a></p>
-      </article>
 
-      <article class="task">
-        <h3>Bài tập 2</h3>
-        <p>Mô tả bài làm...</p>
-        <p><a href="https://www.canva.com/design/DAGz5gobQAw/J1jTQ2KBuOmHuo1VUhdcfA/edit?utm_content=DAGz5gobQAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn" target="_blank">Xem bài làm</a></p>
-      </article>
-    </section>
+<main>
+  <h1>Xin chào!</h1>
+  <p>Chào mừng bạn đến với trang web của <strong>Nhóm 5 – 12Anh</strong>. Đây là nơi lưu trữ toàn bộ bài tập và sản phẩm học tập của nhóm.</p>
 
-    <section class="presentation">
-      <h2>Bài thuyết trình</h2>
-      <article class="task">
-        <h3>Chủ đề thuyết trình</h3>
-        <p>Mô tả nội dung thuyết trình...</p>
-        <p><a href="https://www.canva.com/design/DAGz5gobQAw/J1jTQ2KBuOmHuo1VUhdcfA/edit?utm_content=DAGz5gobQAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn" target="_blank">Xem bài thuyết trình</a></p>
-      </article>
-    </section>
+  <!-- Thành viên -->
+  <h2>Thành viên nhóm</h2>
+  <div class="members-list">
+    <a class="member" href="dang.html">Hải Đăng</a>
+    <a class="member" href="thao.html">Quang Thảo</a>
+    <a class="member" href="thanh.html">Kim Thanh</a>
+    <a class="member" href="diep.html">Ngọc Diệp</a>
+    <a class="member" href="thuan.html">Huy Thuận</a>
+  </div>
 
-    <footer class="site-footer">
-      <p>© 2025 – Nhóm 5 – 12Anh</p>
-    </footer>
-  </main>
+  <!-- Bài tập -->
+  <h2>Bài tập</h2>
+  <article class="task">
+    <h3>Bài tập 1</h3>
+    <p>Mô tả bài làm...</p>
+    <a href="#" class="btn" target="_blank">Xem bài làm</a>
+  </article>
+
+  <article class="task">
+    <h3>Bài tập 2</h3>
+    <p>Mô tả bài làm...</p>
+    <a href="#" class="btn" target="_blank">Xem bài làm</a>
+  </article>
+
+  <!-- Thuyết trình -->
+  <h2>Bài thuyết trình</h2>
+  <article class="task">
+    <h3>Chủ đề thuyết trình</h3>
+    <p>Mô tả nội dung thuyết trình...</p>
+    <a href="#" class="btn" target="_blank">Xem bài thuyết trình</a>
+  </article>
+
+  <footer>
+    © 2025 – Nhóm 5 – 12Anh
+  </footer>
+</main>
+
 </body>
 </html>
